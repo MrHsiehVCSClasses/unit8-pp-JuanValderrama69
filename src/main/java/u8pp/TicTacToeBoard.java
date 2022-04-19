@@ -33,17 +33,86 @@ public class TicTacToeBoard {
     }
 
     public boolean hasHorizontalWin() {
-        /* Your code here */
+      boolean win = false;
+      for(int i = 0; i < data.length; i++){
+        for(int j = 0; j < data[i].length; j++){
+          String piece = "";
+          if(j == 0 ){
+            piece = data[i][j];
+          }
+          else if(data[i][j] != piece){
+            win = false;
+          }
+          else{
+            win = true;
+          }
+        }
+        if (win == true){
+          return win;
+        }
+      }
+      return win;
     }
 
     public boolean hasVerticalWin() {
-        /* Your code here */
+      int n = 0;
+      int j = 0;
+      boolean win = false;
+      while(j < data[n].length){
+        for(int i = 0; i < data.length; i++){
+          String piece = "";
+          if(i == 0){
+            piece = data[i][j];
+          }
+          else if(data[i][j] != piece){
+            win = false;
+          }
+          else{
+            win = true;
+          }
+        }
+        if (win == true){
+          return win;
+        }
+        else{
+          j++;
+        }
+      }
+      return win;
     }
 
     public boolean hasDiagonalWin() {
-        /* Your code here */
-    }
-
+      boolean win = false;
+      int i = 0;
+          for(int j = 0; j < data[i].length; j++){
+            String piece = "";
+            if(j == 0){
+              piece = data[i][j];
+            }
+            else if(data[i][j] != piece){
+              win = false;
+            }
+            else{
+              win = true;
+            }
+            i++;
+          }
+      i = data.length -1;
+      for(int j = 0; j < data[i].length; j++){
+            String piece = "";
+            if(j == 0){
+              piece = data[i][j];
+            }
+            else if(data[i][j] != piece){
+              win = false;
+            }
+            else{
+              win = true;
+            }
+            i--;
+          }
+      return win;
+        }
     /* helper functions go here */
    
 }
